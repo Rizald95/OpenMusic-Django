@@ -7,6 +7,15 @@ from django.contrib.auth.models import User
 from .models import Album, Song, Playlist
 from .serializers import UserSerializer, AlbumSerializer, SongSerializer, PlaylistSerializer
 
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
+
+@swagger_auto_schema(
+    method="post",
+    request_body=UserSerializer,
+    responses={201: openapi.Response("User successfully created", UserSerializer)},
+)
+
 @api_view(['POST'])
 def register_user(request):
     serializer = UserSerializer(data=request.data)
