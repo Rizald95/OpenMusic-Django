@@ -3,14 +3,14 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.decorators import api_view
-from django.contrib.auth import authenticate, get_user_model  # Gunakan get_user_model()
+from django.contrib.auth import authenticate, get_user_model  
 from .models import Album, Song, Playlist
 from .serializers import UserSerializer, AlbumSerializer, SongSerializer, PlaylistSerializer
 
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
-User = get_user_model()  # Pastikan model user menggunakan model yang aktif
+User = get_user_model()  
 
 @swagger_auto_schema(
     method="post",
@@ -37,7 +37,7 @@ def login_user(request):
     username = request.data.get("username")
     password = request.data.get("password")
 
-    print(f"DEBUG: Mencari user {username}")  # Debugging
+    print(f"DEBUG: Mencari user {username}")  
 
     user = get_user_model().objects.filter(username=username).first()
     if user:
@@ -82,6 +82,7 @@ class AlbumViewSet(viewsets.ModelViewSet):
     queryset = Album.objects.all()
     serializer_class = AlbumSerializer
     permission_classes = [IsAuthenticated]
+    lookup_field = "pk"  
 
 
 class SongViewSet(viewsets.ModelViewSet):
@@ -91,13 +92,10 @@ class SongViewSet(viewsets.ModelViewSet):
     queryset = Song.objects.all()
     serializer_class = SongSerializer
     permission_classes = [IsAuthenticated]
+    lookup_field = "pk"  
 
 
 class PlaylistViewSet(viewsets.ModelViewSet):
-    """
-    View untuk mengelola Playlist.
-    """
-    queryset = Playlist.objects.all()  # Menentukan queryset agar tidak ada error di router
     serializer_class = PlaylistSerializer
     permission_classes = [IsAuthenticated]
 

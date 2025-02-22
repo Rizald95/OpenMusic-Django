@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "1f4b96f5-58be-4937-b593-9db4144b6154",
+		"name": "OpenMusic-Django",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25044351",
+		"_collection_link": "https://django-teams.postman.co/workspace/OpenMusic-Django~fe86d335-52cb-4b92-bd9e-043ce2c55a61/collection/25044351-1f4b96f5-58be-4937-b593-9db4144b6154?action=share&source=collection_link&creator=25044351"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"rizal\", \"password\": \"rizal123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/auth/login/"
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"rizal\", \"password\": \"rizal123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/auth/register/"
+					},
+					"response": []
+				},
+				{
+					"name": "RefreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MDg1MDQwOCwiaWF0IjoxNzQwMjQ1NjA4LCJqdGkiOiIxN2ZkNDk3NmExYjg0YmFiYjVjYzZjMDYzNzk5NmYwYSIsInVzZXJfaWQiOjR9.JM1Fa_3XiRm0B_rKyInLmCtFFE9T8xSFkp0gMYK8mLM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/auth/refresh/"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MDg1MDQwOCwiaWF0IjoxNzQwMjQ1NjA4LCJqdGkiOiIxN2ZkNDk3NmExYjg0YmFiYjVjYzZjMDYzNzk5NmYwYSIsInVzZXJfaWQiOjR9.JM1Fa_3XiRm0B_rKyInLmCtFFE9T8xSFkp0gMYK8mLM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/auth/logout/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Albums",
+			"item": [
+				{
+					"name": "getAlbums",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUwNTQwLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjkyYTU0M2EzMzQ1ODQ2OWJhMTA2ZmU1MzZhOTVhMGE1IiwidXNlcl9pZCI6NH0.LZeBl4BsAv-PMl8dKEmBMb1jW-tp86RD6q0RnrprJaM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/albums/"
+					},
+					"response": []
+				},
+				{
+					"name": "postAlbums",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUwNTQwLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjkyYTU0M2EzMzQ1ODQ2OWJhMTA2ZmU1MzZhOTVhMGE1IiwidXNlcl9pZCI6NH0.LZeBl4BsAv-PMl8dKEmBMb1jW-tp86RD6q0RnrprJaM"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"RnB\", \"year\": 2025 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/albums/"
+					},
+					"response": []
+				},
+				{
+					"name": "getDetailAlbums",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUwNTQwLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjkyYTU0M2EzMzQ1ODQ2OWJhMTA2ZmU1MzZhOTVhMGE1IiwidXNlcl9pZCI6NH0.LZeBl4BsAv-PMl8dKEmBMb1jW-tp86RD6q0RnrprJaM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/albums/{id}/"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDetailAlbums",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUwNTQwLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjkyYTU0M2EzMzQ1ODQ2OWJhMTA2ZmU1MzZhOTVhMGE1IiwidXNlcl9pZCI6NH0.LZeBl4BsAv-PMl8dKEmBMb1jW-tp86RD6q0RnrprJaM"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/albums/3/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Songs",
+			"item": [
+				{
+					"name": "getAllSongs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUyOTMxLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjQzYzlkMDViNDkzODRlMGNhYzNkYThlOTA2ZjU1MjhmIiwidXNlcl9pZCI6NH0.rA46NtOP5GpkQY1R_gCxDA5w1by0nqNLIPR1ZiryBtw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/songs/"
+					},
+					"response": []
+				},
+				{
+					"name": "postNewSongs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUwNTQwLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjkyYTU0M2EzMzQ1ODQ2OWJhMTA2ZmU1MzZhOTVhMGE1IiwidXNlcl9pZCI6NH0.LZeBl4BsAv-PMl8dKEmBMb1jW-tp86RD6q0RnrprJaM"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"title\": \"Hurry up Tomorrow\", \r\n    \"year\": 2025, \r\n    \"genre\": \"RnB\", \r\n    \"performer\": \"The Weekknd\", \r\n    \"album\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/songs/"
+					},
+					"response": []
+				},
+				{
+					"name": "getDetailSongs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUwNTQwLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjkyYTU0M2EzMzQ1ODQ2OWJhMTA2ZmU1MzZhOTVhMGE1IiwidXNlcl9pZCI6NH0.LZeBl4BsAv-PMl8dKEmBMb1jW-tp86RD6q0RnrprJaM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/songs/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSongsbyId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUwNTQwLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjkyYTU0M2EzMzQ1ODQ2OWJhMTA2ZmU1MzZhOTVhMGE1IiwidXNlcl9pZCI6NH0.LZeBl4BsAv-PMl8dKEmBMb1jW-tp86RD6q0RnrprJaM"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/songs/{id}/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Playlists",
+			"item": [
+				{
+					"name": "postAddPlaylist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUyOTMxLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjQzYzlkMDViNDkzODRlMGNhYzNkYThlOTA2ZjU1MjhmIiwidXNlcl9pZCI6NH0.rA46NtOP5GpkQY1R_gCxDA5w1by0nqNLIPR1ZiryBtw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test Playlist\",\r\n    \"songs\": [2, 1]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/playlists/"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllDetailPlaylistbyUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUyOTMxLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjQzYzlkMDViNDkzODRlMGNhYzNkYThlOTA2ZjU1MjhmIiwidXNlcl9pZCI6NH0.rA46NtOP5GpkQY1R_gCxDA5w1by0nqNLIPR1ZiryBtw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/playlists/"
+					},
+					"response": []
+				},
+				{
+					"name": "postSongsInPlaylistUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUyOTMxLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjQzYzlkMDViNDkzODRlMGNhYzNkYThlOTA2ZjU1MjhmIiwidXNlcl9pZCI6NH0.rA46NtOP5GpkQY1R_gCxDA5w1by0nqNLIPR1ZiryBtw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/playlists/{id}/songs/"
+					},
+					"response": []
+				},
+				{
+					"name": "getDetailPlaylistById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUyOTMxLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjQzYzlkMDViNDkzODRlMGNhYzNkYThlOTA2ZjU1MjhmIiwidXNlcl9pZCI6NH0.rA46NtOP5GpkQY1R_gCxDA5w1by0nqNLIPR1ZiryBtw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/playlists/{id}"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

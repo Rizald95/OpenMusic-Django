@@ -22,6 +22,13 @@ class SongSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class PlaylistSerializer(serializers.ModelSerializer):
+    songs = serializers.PrimaryKeyRelatedField(
+        queryset=Song.objects.all(),
+        many=True,
+        required=False  # Membuat field songs menjadi opsional
+    )
+
     class Meta:
         model = Playlist
-        fields = '__all__'
+        fields = ['id', 'name', 'owner', 'songs']
+        extra_kwargs = {'owner': {'read_only': True}}
