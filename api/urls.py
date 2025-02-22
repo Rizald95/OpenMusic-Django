@@ -1,7 +1,8 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from .views import register_user, logout_user, AlbumViewSet, SongViewSet, PlaylistViewSet
+from .views import register_user, login_user, logout_user, AlbumViewSet, SongViewSet, PlaylistViewSet
+
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework.permissions import AllowAny
@@ -26,8 +27,9 @@ router.register(r'songs', SongViewSet, basename="song")
 router.register(r'playlists', PlaylistViewSet, basename="playlist")
 
 urlpatterns = [
-    path('auth/register/', register_user, name="register"),
-    path('auth/login/', TokenObtainPairView.as_view(), name="token_obtain_pair"),
+   path('auth/register/', register_user, name="register"),
+    path('auth/login/', login_user, name="login"),  # Tambahkan login manual
+    path('auth/token/', TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path('auth/refresh/', TokenRefreshView.as_view(), name="token_refresh"),
     path('auth/logout/', logout_user, name="logout"),
     path('', include(router.urls)),
