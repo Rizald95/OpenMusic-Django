@@ -33,24 +33,26 @@
 					"response": []
 				},
 				{
-					"name": "Register",
+					"name": "Logout",
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {}
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMzEzMjM2LCJpYXQiOjE3NDAzMTI5MzYsImp0aSI6IjBkZjcxNzlmOTM5NzQ4ZTViNGUwMmMwZjllMDE2NmFlIiwidXNlcl9pZCI6NH0.oDPUQinbeU178uwWEeMfZIMN11yJXTgomgNJPJtmyHc"
+							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"username\": \"rizal\", \"password\": \"rizal123\"}",
+							"raw": "{\r\n     \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MDM5OTMzNiwiaWF0IjoxNzQwMzEyOTM2LCJqdGkiOiJmNDllMjA0OWJiYmU0NDcyOWZkMTQ2MjA1M2QwOThkMSIsInVzZXJfaWQiOjR9.C__pikrHHFFdizSH-VkX5_2osvicYcuGxSVrfWiEJa8\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/api/auth/register/"
+						"url": "http://127.0.0.1:8000/api/auth/logout/"
 					},
 					"response": []
 				},
@@ -61,7 +63,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MDg1MDQwOCwiaWF0IjoxNzQwMjQ1NjA4LCJqdGkiOiIxN2ZkNDk3NmExYjg0YmFiYjVjYzZjMDYzNzk5NmYwYSIsInVzZXJfaWQiOjR9.JM1Fa_3XiRm0B_rKyInLmCtFFE9T8xSFkp0gMYK8mLM\"\r\n}",
+							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MDkxNjA5MSwiaWF0IjoxNzQwMzExMjkxLCJqdGkiOiI2NTU3OTQ5MTRkMjI0NjZmOWMxOTg0MzU1N2IwZTk4NyIsInVzZXJfaWQiOjV9.lrGcr9aq41PkdN54mI2vVCW1cWFPDHI1taIn5Sk-wAk\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -73,20 +75,23 @@
 					"response": []
 				},
 				{
-					"name": "Logout",
+					"name": "Register",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MDg1MDQwOCwiaWF0IjoxNzQwMjQ1NjA4LCJqdGkiOiIxN2ZkNDk3NmExYjg0YmFiYjVjYzZjMDYzNzk5NmYwYSIsInVzZXJfaWQiOjR9.JM1Fa_3XiRm0B_rKyInLmCtFFE9T8xSFkp0gMYK8mLM\"\r\n}",
+							"raw": "\r\n{\"username\": \"rizal\", \"password\": \"rizal123\"}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://127.0.0.1:8000/api/auth/logout/"
+						"url": "http://127.0.0.1:8000/api/auth/register/"
 					},
 					"response": []
 				}
@@ -101,7 +106,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUwNTQwLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjkyYTU0M2EzMzQ1ODQ2OWJhMTA2ZmU1MzZhOTVhMGE1IiwidXNlcl9pZCI6NH0.LZeBl4BsAv-PMl8dKEmBMb1jW-tp86RD6q0RnrprJaM"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNTY0NzY2LCJpYXQiOjE3NDA1NjQ0NjYsImp0aSI6Ijg2MDhkNGZkMzYwNjQ2NTRiMGZmMTBjOGZiNWQ1NTVmIiwidXNlcl9pZCI6NH0.WkWdzxX04Cj77VQUyMbLZbjbQquFxZiN2T8ljQvOE6A"
 							}
 						},
 						"method": "GET",
@@ -116,14 +121,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUwNTQwLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjkyYTU0M2EzMzQ1ODQ2OWJhMTA2ZmU1MzZhOTVhMGE1IiwidXNlcl9pZCI6NH0.LZeBl4BsAv-PMl8dKEmBMb1jW-tp86RD6q0RnrprJaM"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMzEzMDkxLCJpYXQiOjE3NDAzMTEyOTEsImp0aSI6IjE5ZGU0OGVlYjQ0MDRmODk4ZjBmNjdkNTkwNzBhNjZmIiwidXNlcl9pZCI6NX0.fiKSipfolAxqwK2Kv4QvnzZ0w_DvzVCmnAcdgzTlFn4"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \"name\": \"RnB\", \"year\": 2025 }",
+							"raw": "{ \"name\": \"test\", \"year\": 2024 }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -143,7 +148,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMjUwNTQwLCJpYXQiOjE3NDAyNDU2MDgsImp0aSI6IjkyYTU0M2EzMzQ1ODQ2OWJhMTA2ZmU1MzZhOTVhMGE1IiwidXNlcl9pZCI6NH0.LZeBl4BsAv-PMl8dKEmBMb1jW-tp86RD6q0RnrprJaM"
+								"token": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNTY1MTA0LCJpYXQiOjE3NDA1NjQ4MDQsImp0aSI6IjUxNGI2NzNjNTk4MTQ1NjBiMzM5MWU5OWY1NjZlN2Q4IiwidXNlcl9pZCI6NH0.AkHbfAkO4jvssmIz-2X9VBnZKFQlb2ds6_YvG0HyOLs"
 							}
 						},
 						"method": "GET",
@@ -173,6 +178,30 @@
 						"method": "DELETE",
 						"header": [],
 						"url": "http://127.0.0.1:8000/api/albums/3/"
+					},
+					"response": []
+				},
+				{
+					"name": "putUpdateAlbums",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNTY1MTA0LCJpYXQiOjE3NDA1NjQ4MDQsImp0aSI6IjUxNGI2NzNjNTk4MTQ1NjBiMzM5MWU5OWY1NjZlN2Q4IiwidXNlcl9pZCI6NH0.AkHbfAkO4jvssmIz-2X9VBnZKFQlb2ds6_YvG0HyOLs"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"SAMLEKOM\", \"year\": 2009 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/albums/1/"
 					},
 					"response": []
 				}
