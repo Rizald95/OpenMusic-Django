@@ -19,12 +19,31 @@ cd OpenMusic-Django
 
 ```
 
-###2️⃣ **Buat Virtual Environment & Install Dependencies**
+2️⃣ **Buat Virtual Environment & Install Dependencies**
 
 ```bash
 python -m venv venv
 source venv/bin/activate  # Mac/Linux
 venv\Scripts\activate      # Windows
 pip install -r requirements.txt
+
+```
+
+3️⃣ **Buat File .env (Jika Diperlukan)**
+
+```bash
+SECRET_KEY=your_secret_key
+DEBUG=True
+DATABASE_URL=sqlite:///db.sqlite3
+
+
+```
+
+4️⃣ **Migrate Database**
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+
 
 ```
