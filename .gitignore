@@ -1,0 +1,34 @@
+# Virtual environment
+venv/
+*.pyc
+__pycache__/
+
+# Database
+db.sqlite3
+*.db
+
+# Environment variables
+.env
+
+# Django migration cache
+*.log
+*.pot
+*.pyc
+*.pyo
+*.swp
+*.swo
+*.swn
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.iml
+
+# Static and media files (if applicable)
+staticfiles/
+media/
+
+# Pytest & Coverage reports
+htmlcov/
+.coverage
+.pytest_cache/
