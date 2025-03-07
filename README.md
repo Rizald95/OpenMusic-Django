@@ -10,11 +10,21 @@ OpenMusic-Django adalah REST API berbasis Django untuk mengelola data musik.
 
 ## 🛠️ Setup Proyek
 
+### 1️⃣ **Clone Repository**
+
+```bash
 git clone https://github.com/Rizald95/OpenMusic-Django.git
 cd OpenMusic-Django
 
-##2 Buat Virtual Environment & Install Dependencies
+
+```
+
+###2️⃣ **Buat Virtual Environment & Install Dependencies**
+
+```bash
 python -m venv venv
-source venv/bin/activate # Mac/Linux
-venv\Scripts\activate # Windows
+source venv/bin/activate  # Mac/Linux
+venv\Scripts\activate      # Windows
 pip install -r requirements.txt
+
+```
