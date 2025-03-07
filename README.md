@@ -47,3 +47,10 @@ python manage.py migrate
 
 
 ```
+
+5️⃣ **Jalankan Server**
+
+```bash
+python manage.py runserver
+
+```
